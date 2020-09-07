@@ -22,9 +22,12 @@ function App() {
 
     const [top, setTop] = useState(false);
 
+    const [showMenu, setShowMenu] = useState(false);
+
+
     return (
         <div className="App text-white">
-            <body className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500">
+            <body className="bg-gradient-to-r from-green-300 via-green-500 to-green-900">
             <nav className={`fixed w-full top-0 ${top ? null : 'bg-white text-black'}`}>
                 <div className="w-full container mx-auto flex flex-wrap
                     items-center justify-between mt-0 py-5">
@@ -39,9 +42,19 @@ function App() {
                         <a className="toggleColor no-underline hover:no-underline
                              font-bold text-2xl lg:text-4xl">Landing</a>
                     </div>
-                    <div className="block lg:hidden pr-4"></div>
-                    <div className="lg:flex lg:items-center lg:w-auto hidden">
-                        <ul className="flex list-reset lg:flex justify-end flex-1 items-center">
+                    {/*mobile menu*/}
+                    <div className="block lg:hidden pr-4" onClick={() => setShowMenu(!showMenu)}>
+                        <button className="flex items-center">
+                            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20"
+                                 xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
+                                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    {/*menu*/}
+                    <div
+                        className={`${!showMenu ? 'hidden' : ''} w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20`}>
+                        <ul className="lg:flex list-reset justify-end flex-1 items-center">
                             <li className="mr-3">
                                 <a className="py-2 px-4 text-black font-bold no-underline">Active</a>
                             </li>

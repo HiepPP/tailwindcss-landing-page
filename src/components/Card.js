@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Card({title, description}){
-    return(
+export default function Card({title, description}) {
+    return (
         <>
             <div className="w-full md:w-1/3 px-4 py-3">
                 <div className="border-2 border-gray-400 p-4 shadow-lg">
